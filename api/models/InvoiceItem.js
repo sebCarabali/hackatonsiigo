@@ -12,7 +12,8 @@ var InvoiceItemSchema = Schema({
      itemValue: Number,
      unitValue: Number,
      product: { type: Schema.ObjectId, ref: 'Product' },
-     invoice: { type: Schema.ObjectId, ref: 'Invoice' }
+     invoice: { type: Schema.ObjectId, ref: 'Invoice' },
+     tenant: { type: Schema.ObjectId, ref: 'Tenant' },
 });
 
 module.exports = mongoose.model('InvoiceItem', productSchema);

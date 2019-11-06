@@ -11,6 +11,7 @@ var invoiceSchema = Schema({
      docDate: Date,
      docNumber: String,
      customer: { type: Schema.ObjectId, ref: 'Invoice' },
+     tenant: { type: Schema.ObjectId, ref: 'Tenant' },
      totalDiscount: Number,
      totalTax: Number,
      totalValue: Number,
