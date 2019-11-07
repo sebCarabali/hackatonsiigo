@@ -5,6 +5,8 @@ var mongoose = require('mongoose');     // Modulo intermediario para trabajar co
 var app = require('./app');
 var config = require('./config');
 var port = process.env.PORT || config.portApp;
+var http = require('http');
+var socketIO = require('socket.io');
 
 
 mongoose.Promise = global.Promise; // Elimina mensajes de mongoose al ejecutar el servidor
@@ -15,8 +17,9 @@ mongoose.connect('mongodb://'+ config.ipdb + ':' + config.portdb + '/hackaton', 
         throw err;
     } else {
         console.log("la conexión con la base de datos está funcionando correctamente");
-        app.listen(port, function() {
-            console.log("Servidor del API Rest escuchando en el puerto: " + config.portApp);
-        });
+        const server = http.createServer(app);
+        app.set('io', socketIO);
+        server.listen(port);
+        console.log("Servidor del API Rest escuchando en el puerto: " + config.portApp);
     }
 });

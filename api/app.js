@@ -2,11 +2,13 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+const path = require('path');
 
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json()); // Conviersion a JSON de los datos recibidos por peticiones HTTP
+app.use(express.static(path.join('../client/', 'dist'))); // Directorio del cliente
 
 
 // Configuracion de cabeceras http
