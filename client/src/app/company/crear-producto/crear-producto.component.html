@@ -1,12 +1,26 @@
 <div class="container-fluid">
-  <div class="row">
-    <form>
-      <div class="col-sm-6">
-
-      </div>
-      <div class="col-sm-6">
-
-      </div>
-    </form>
+  <div class="card mt-2 mb-2 formulario">
+    <div class="card-body">
+      <h3 class="card-title">Crear producto</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" name="name" required class="form-control" 
+              [(ngModel)]="model.name"/>
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea name="description" class="form-control" cols="30" rows="10"
+            [(ngModel)]="model.description"></textarea>
+        </div>
+         <div class="form-gruop">
+          <label for="price">Precio</label>
+          <input type="text"  [(ngModel)]="model.price" class="form-control" name="price">
+        </div>
+        <div>
+          <button (click)="onSubmit()" class="mt-2 btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
