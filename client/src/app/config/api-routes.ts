@@ -4,6 +4,6 @@ export class ApiRoutes {
     private static HOST: string = "localhost";
 
     public static getBaseUrl() {
-        return `${this.PROTOCOL}://${this.HOST}:${this.PORT}`;
+        return `${this.PROTOCOL}://${this.HOST}:${this.PORT}/api/`;
     }
 }

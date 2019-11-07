@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FileUploadService } from './file-upload.service';
 
 @Component({
-  selector: 'app-subir-archivo',
-  templateUrl: './subir-archivo.component.html',
-  styleUrls: ['./subir-archivo.component.css']
+  selector: 'app-file-upload',
+  templateUrl: './file-upload.component.html',
+  styleUrls: ['./file-upload.component.css']
 })
-export class SubirArchivoComponent implements OnInit {
+export class FileUploadComponent implements OnInit {
   @ViewChild('fileInput') fileInput;
   constructor(private service: FileUploadService) { }
 
