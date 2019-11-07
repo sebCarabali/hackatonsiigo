@@ -1,10 +1,14 @@
 'use strict'
 
+
 var express = require('express');
 var bodyParser = require('body-parser');
 const path = require('path');
 
 var app = express();
+
+// Controllers
+var product = require('./controllers/Product');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json()); // Conviersion a JSON de los datos recibidos por peticiones HTTP
@@ -19,6 +23,9 @@ app.use(function(request, response, next) {
      response.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
      next();
  });
+
+ // Rutas
+ app.use('/api', product);
 
 
 module.exports = app;
