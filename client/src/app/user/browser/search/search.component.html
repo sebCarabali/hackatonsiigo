@@ -5,12 +5,12 @@
         Busqueda
       </h3>
       <div class="row">
-        <input type="text" class="form-control col-9" name="query" placeholder="Busqueda de productos">
-        <button class="btn btn-primary flot-right col-2 ml-1"><i class="fa fa-search"></i> Buscar</button>
+        <input type="text" [(ngModel)]="query" (keyup)="onKeyUp()" class="form-control col-9" name="query" placeholder="Busqueda de productos">
+        <button (click)="onClickSearch()" class="btn btn-primary flot-right col-2 ml-1"><i class="fa fa-search"></i> Buscar</button>
       </div>
       <!-- Div resultados -->
-      <div class="resultado">
-        Carr
+      <div (click)="onClickResult(idx)" class="resultado" *ngFor="let result of getResults(); let idx = index">
+        {{ result }}
       </div>
     </div>
   </div>

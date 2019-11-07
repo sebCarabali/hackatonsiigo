@@ -18,11 +18,15 @@ export class CreateProductComponent implements OnInit {
   }
 
   onSubmit() {
-    let ret:string = this.service.createProduct(this.model);
-    if(ret === "-1") {
-      alert("No se pudo insertar el producto.");
-    } else {
+    this.service.createProduct(this.model).subscribe(data => {
+      alert('Producto Creado Correctamente');
+      this.clearModel();
+    }, err => {
+      alert('Error Al Crear el producto');
+    });
+  }
 
-    }
+  clearModel() {
+    this.model = new Product();
   }
 }

@@ -5,7 +5,8 @@ import { CreateProductComponent } from './company/create-product/create-product.
 import { FileUploadComponent } from './company/file-upload/file-upload.component';
 
 const routes: Routes = [
-  { path: '', component: FileUploadComponent },
+  { path: '', component: BrowserComponent},
+  { path: 'company/file-upload', component: FileUploadComponent },
   { path: 'company/create-product', component: CreateProductComponent },
   { path: 'user/search', component: BrowserComponent }
 ];

@@ -1,3 +1,16 @@
-<div class="bg-dark text-white p-2">
-  <h1>Hackaton Siigo</h1>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Hackaton Siigo</a>
+  <div class=" navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"  >
+        <a class="nav-link" [routerLink]="['/user/search']">Buscar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/company/create-product']">Crear producto</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/company/file-upload']">Subir archivo</a>
+        </li>
+    </ul>
+  </div>
+</nav>
